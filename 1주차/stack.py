@@ -13,13 +13,14 @@ empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
 top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 
 '''
-
-N = int(input())
+import sys
+N = int(sys.stdin.readline())
 
 stack = []
+size = 0
 
 for _ in range(N):
-    cmdline = input().split()
+    cmdline = sys.stdin.readline().split()
     if len(cmdline) == 2:
         cmd, num = cmdline
         num = int(num)
@@ -29,17 +30,20 @@ for _ in range(N):
 
     if cmd == 'push':
         stack.append(num)
+        size += 1
     elif cmd == 'pop':
-        if len(stack) > 0:
+        if size > 0:
             print(stack.pop())
+            size -= 1 # size가 1이상일 때만 pop하면 size 감소
         else:
             print(-1)
+        
     elif cmd == 'size':
-        print(len(stack))
+        print(size)
     elif cmd == 'empty':
-        print(0 if len(stack) > 0 else 1)
+        print(0 if size > 0 else 1)
     elif cmd == 'top':
-        if len(stack) > 0:
+        if size > 0:
             print(stack[-1])
         else:
             print(-1)
