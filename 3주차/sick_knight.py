@@ -6,7 +6,7 @@
 N, M = map(int, input().split())
 
 if N > 2: #세로길이 3이상
-	if M <= 6:
+	if M <= 7:
 		max_visit = min(M, 4)
 	else:
 		max_visit = M - 2
