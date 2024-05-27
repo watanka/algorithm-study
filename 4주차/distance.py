@@ -15,6 +15,6 @@ for current_ in range(N):
     for next_ in range(current_+1, N):
         if blocks[next_] == next_letter:
             k = next_ - current_
-            dp[next_] = min(dp[next_], dp[current_] + k)
+            dp[next_] = min(dp[next_], dp[current_] + k**2)
 			
 print(dp[-1] if dp[-1] != sys.maxsize else -1)

@@ -5,6 +5,9 @@
 
 N, M = map(int, input().split())
 
+if N == 1:
+    print(1)
+    exit()
 
 if N >= 3: #세로길이 3이상
 	if M <= 6:
