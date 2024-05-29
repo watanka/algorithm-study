@@ -1,3 +1,7 @@
+'''
+백준 1495 기타리스트
+'''
+
 N, S, M = map(int, input().split())
 V = list(map(int, input().split()))
 
