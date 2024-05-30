@@ -24,5 +24,6 @@ for y in range(N):
                 dp[next_y][x] += dp[y][x]
             if next_x < N: # x축 이동
                 dp[y][next_x] += dp[y][x]              
-				
+for row in dp:
+    print(row)
 print(dp[-1][-1])
