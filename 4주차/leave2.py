@@ -1,3 +1,7 @@
+'''
+백준 15486 퇴사2
+'''
+
 import sys
 input = sys.stdin.readline
 N = int(input())
